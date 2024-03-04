@@ -7,20 +7,20 @@ import InsertCredentials from "./insert";
 import { errorToast } from "@/lib/toastify";
 
 const demoUser: TUser[] = [
-  { id: "234234", phone: "9805401056", name: "Narayan neupane" },
+  { id: "234234", phone: "9805401044", name: "Aayush Adhikari" },
   { id: "wq3e4534", phone: "9833723845", name: "Aarjan KC" },
   { id: "54393845", phone: "9861444556", name: "Aniket Thapa" },
 ];
 const demoDocument: TCredentials[] = [
   {
     did: "234234w34r234r23re23e23e",
-    name: "Narayan Neupane",
-    phone: "9805401056",
+    name: "Aayush Adhikari",
+    phone: "9805401044",
     dob: "2000/01/01",
-    email: "narannpn@gmail.com",
+    email: "aayush123@gmail.com",
     address: "Kathmandu, Nepal",
     userId: "234234",
-    userFullName: "Narayan neupane",
+    userFullName: "Aayush Adhikari",
   },
   {
     did: "aserq3w4rq34rfwe4423se",
@@ -78,7 +78,7 @@ export default function Credentials() {
     <>
       <Head>
         <title>Credentials</title>
-        <meta name="description" content="Content Management System" />
+        <meta name="description" content="SSI System" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={LOGO.src} />
       </Head>

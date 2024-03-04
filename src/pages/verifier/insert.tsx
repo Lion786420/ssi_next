@@ -9,17 +9,18 @@ import { TCredentials } from ".";
 interface VerifyCredentialsProps {
   onClose: () => void;
 }
+
 export default function VerifyCredentials({ onClose }: VerifyCredentialsProps) {
   const [did, setDID] = useState<string | null>(null);
   const [credential, setCredential] = useState<TCredentials | null>({
-    did: "234234w34r234r23re23e23e",
-    name: "Narayan Neupane",
-    phone: "9805401056",
-    dob: "2000/01/01",
-    email: "narannpn@gmail.com",
-    address: "Kathmandu, Nepal",
-    userId: "234234",
-    userFullName: "Narayan neupane",
+    did: "as345uwer834r89734",
+    name: "Aniket Thapa",
+    phone: "9861444556",
+    dob: "1999/05/10",
+    email: "aniketthapa01@gmail.com",
+    address: "Dolakha, Nepal",
+    userId: "54393845",
+    userFullName: "Aniket Thapa",
   });
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
@@ -61,31 +62,33 @@ export default function VerifyCredentials({ onClose }: VerifyCredentialsProps) {
             />
           </div>
           {credential ? (
-            <table width={"100%"}>
-              <tr>
-                <td>Status</td>
-                <td>Verified</td>
-              </tr>
-              <tr>
-                <td>Fullname</td>
-                <td>{credential.name}</td>
-              </tr>
-              <tr>
-                <td>Phone</td>
-                <td>{credential.phone}</td>
-              </tr>
-              <tr>
-                <td>Date of Birth</td>
-                <td>{credential.dob}</td>
-              </tr>
-              <tr>
-                <td>Email</td>
-                <td>{credential.email}</td>
-              </tr>
-              <tr>
-                <td>Address</td>
-                <td>{credential.address}</td>
-              </tr>
+            <table width={"100%"} style={{ color: "white" }}>
+              <thead>
+                <tr>
+                  <td>Status</td>
+                  <td>Verified</td>
+                </tr>
+                <tr>
+                  <td>Fullname</td>
+                  <td>{credential.name}</td>
+                </tr>
+                <tr>
+                  <td>Phone</td>
+                  <td>{credential.phone}</td>
+                </tr>
+                <tr>
+                  <td>Date of Birth</td>
+                  <td>{credential.dob}</td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td>{credential.email}</td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>{credential.address}</td>
+                </tr>
+              </thead>
             </table>
           ) : (
             <span

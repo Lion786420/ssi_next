@@ -8,19 +8,19 @@ import CertificateTable from "./data";
 import { errorToast } from "@/lib/toastify";
 
 const demoUser: TUser[] = [
-  { id: "234234", phone: "9805401056", name: "Narayan neupane" },
+  { id: "234234", phone: "9805401044", name: "Aayush Adhikari" },
   { id: "wq3e4534", phone: "9812345678", name: "Aarjan Xetri" },
 ];
 const demoDocument: TCredentials[] = [
   {
     did: "234234w34r234r23re23e23e",
-    name: "Narayan Neupane",
-    phone: "9805401056",
+    name: "Aayush Adhikari",
+    phone: "9805401044",
     dob: "2000/01/01",
-    email: "narannpn@gmail.com",
-    address: "Kathmandu, Nepal",
+    email: "aayush123@gmail.com",
+    address: "Thimi, Nepal",
     userId: "234234",
-    userFullName: "Narayan neupane",
+    userFullName: "Aayush Adhikari",
   },
 ];
 

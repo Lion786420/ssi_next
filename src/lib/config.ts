@@ -1,7 +1,7 @@
 const ASSETS_BASE_URL =
   process.env.NEXT_PUBLIC_ASSETS_BASE_URL || "http://192.168.1.24:8000/public";
 const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL || "http://192.168.1.24:8000/api/v1";
+  process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:4000";
 const WEBSITE_BASE_URL =
   process.env.NEXT_PUBLIC_WEBSITE_BASE_URL || "http://localhost:3000";
 const PERSIST_VERSION = 1;

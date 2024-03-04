@@ -27,10 +27,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/verifier": [
+    "/holder": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/verifier.js"
+      "static/chunks/pages/holder.js"
+    ],
+    "/issuer": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/issuer.js"
     ]
   },
   "ampFirstPages": []

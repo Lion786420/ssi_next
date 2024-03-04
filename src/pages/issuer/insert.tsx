@@ -12,6 +12,7 @@ import {
 } from "react";
 import axios from "axios";
 import { TCredentials } from ".";
+import Credentials from "./index";
 
 interface CredentialsInsertProps {
   onClose: () => void;
@@ -34,7 +35,8 @@ export default function InsertCredentials({ onClose }: CredentialsInsertProps) {
     )
       return errorToast("Fields are required");
     try {
-      await axios.post("/issuer/add", state);
+      console.log(state);
+      await axios.post("/api/add", state);
       successToast("Credentials Created");
     } catch (error: any) {
       errorToast(error.message);
@@ -60,6 +62,7 @@ export default function InsertCredentials({ onClose }: CredentialsInsertProps) {
             label="Phone"
             placeholder="eg. 98XXXXXXXX"
             name="phone"
+            onChange={handleInput}
             defaultValue={state.phone}
           />
           <UIInput
@@ -68,6 +71,7 @@ export default function InsertCredentials({ onClose }: CredentialsInsertProps) {
             type="date"
             label="Date of Birth"
             name="dob"
+            onChange={handleInput}
             defaultValue={state.dob && constructInputDate(new Date(state.dob))}
           />
           <UIInput
@@ -76,6 +80,7 @@ export default function InsertCredentials({ onClose }: CredentialsInsertProps) {
             label="Address"
             placeholder="eg. Kathmandu.."
             name="address"
+            onChange={handleInput}
             defaultValue={state.address}
           />
           <UIInput
@@ -84,6 +89,7 @@ export default function InsertCredentials({ onClose }: CredentialsInsertProps) {
             label="Email"
             placeholder="eg. xy@example.com"
             name="email"
+            onChange={handleInput}
             defaultValue={state.email}
           />
 
