@@ -2,10 +2,10 @@ const { v4: uuidv4 } = require("uuid");
 const { Web3 } = require("web3");
 const bodyParser = require("body-parser");
 
-const contractABI = require("./build/contracts/SSI.json").abi;
+const contractABI = require("./truffle/build/contracts/SSI.json").abi;
 
 const web3 = new Web3("http://127.0.0.1:7545");
-const contractAddress = "0x5E61F7Aa0eF6be08eAF71945d0eA1926203119ad";
+const contractAddress = "0x9DE2CEa300cF94C506e583F75A95B327C461ce9a";
 const contract = new web3.eth.Contract(contractABI, contractAddress);
 
 export default function handler(req, res) {

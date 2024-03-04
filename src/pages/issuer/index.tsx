@@ -77,12 +77,16 @@ export default function Credentials() {
   }, []);
   const handleUser = async (id: string, did: string) => {
     try {
-      const response = await axios.post("/issuer/assign", { userId: id, did });
+      const response = await axios.post("/api/assign", { id, did });
       setDocuments((prev) =>
         prev.map((i) =>
           i.userId !== id
             ? i
-            : { ...i, userId: id, userFullName: response.data.userFullName }
+            : {
+                ...i,
+                userId: response.data.id,
+                userFullName: response.data.userFullName,
+              }
         )
       );
     } catch (error: any) {
