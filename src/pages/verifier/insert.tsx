@@ -5,6 +5,7 @@ import UIModal from "@/ui/uimodal";
 import { ChangeEvent, useState } from "react";
 import axios from "axios";
 import { TCredentials } from ".";
+import NavBar from "@/components/nav";
 
 interface VerifyCredentialsProps {
   onClose: () => void;
@@ -12,16 +13,8 @@ interface VerifyCredentialsProps {
 
 export default function VerifyCredentials({ onClose }: VerifyCredentialsProps) {
   const [did, setDID] = useState<string | null>(null);
-  const [credential, setCredential] = useState<TCredentials | null>({
-    did: "as345uwer834r89734",
-    name: "Aniket Thapa",
-    phone: "9861444556",
-    dob: "1999/05/10",
-    email: "aniketthapa01@gmail.com",
-    address: "Dolakha, Nepal",
-    userId: "54393845",
-    userFullName: "Aniket Thapa",
-  });
+  const [credential, setCredential] = useState();
+  const [message, setMessage] = useState("No Documents found");
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value?.trim();
@@ -31,10 +24,14 @@ export default function VerifyCredentials({ onClose }: VerifyCredentialsProps) {
     if (!did) return errorToast("Document ID is required");
 
     try {
-      const response = await axios.post("/issuer/verify", {
+      const response = await axios.post("/api/verify", {
         did,
       });
-      setCredential(response.data);
+      if (response.data === "No") {
+        setCredential();
+      } else {
+        setCredential(response.data);
+      }
     } catch (error: any) {
       errorToast(error.message);
     }
@@ -99,7 +96,7 @@ export default function VerifyCredentials({ onClose }: VerifyCredentialsProps) {
                 justifyContent: "center",
               }}
             >
-              No Document Available
+              {message}
             </span>
           )}
         </div>

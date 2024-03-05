@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const contractABI = require("./truffle/build/contracts/SSI.json").abi;
 
 const web3 = new Web3("http://127.0.0.1:7545");
-const contractAddress = "0x9DE2CEa300cF94C506e583F75A95B327C461ce9a";
+const contractAddress = "0x1C54918d84D6ceeA3f3E0A45Cea914b5fDc8792E";
 const contract = new web3.eth.Contract(contractABI, contractAddress);
 
 export default function handler(req, res) {
@@ -14,7 +14,7 @@ export default function handler(req, res) {
   contract.methods
     .addDocument(user_did, name, dob, email, phone, address)
     .send({
-      from: "0x5719E0d645269916A4061f63636efF10f2bbFfB8",
+      from: "0x252F27d994D4260B511ed0bDCfFab50FaAEDE30A",
       gas: "6721975",
       gasPrice: "20000000000",
     })

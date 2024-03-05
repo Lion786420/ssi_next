@@ -6,6 +6,7 @@ import axios from "axios";
 import InsertCredentials from "./insert";
 import CertificateTable from "./data";
 import { errorToast } from "@/lib/toastify";
+import { MetaMaskProvider } from "@metamask/sdk-react";
 
 const demoUser: TUser[] = [
   { id: "234234", phone: "9805401044", name: "Aayush Adhikari" },
@@ -21,7 +22,7 @@ const demoDocument: TCredentials[] = [
     email: "aayush123@gmail.com",
     address: "Kathmandu, Nepal",
     userId: "234234",
-    userFullName: "Aayush Adhikari",
+    fullName: "Aayush Adhikari",
   },
   {
     did: "aserq3w4rq34rfwe4423se",
@@ -39,7 +40,7 @@ const demoDocument: TCredentials[] = [
     email: "aniketthapa01@gmail.com",
     address: "Dolakha, Nepal",
     userId: "54393845",
-    userFullName: "Aniket Thapa",
+    fullName: "Aniket Thapa",
   },
 ];
 
@@ -51,7 +52,7 @@ export type TCredentials = {
   email: string;
   address: string;
   userId?: string;
-  userFullName?: string;
+  fullName?: string;
 };
 export type TUser = {
   id: string;
@@ -59,6 +60,7 @@ export type TUser = {
   name: string;
 };
 export default function Credentials() {
+  const [refresh, setRefresh] = useState(true);
   const [documents, setDocuments] = useState<TCredentials[]>(demoDocument);
   const [users, setUsers] = useState<TUser[]>(demoUser);
 
@@ -74,7 +76,7 @@ export default function Credentials() {
       }
     };
     fetchUsers();
-  }, []);
+  }, [refresh]);
   const handleUser = async (id: string, did: string) => {
     try {
       const response = await axios.post("/api/assign", { id, did });
@@ -84,11 +86,11 @@ export default function Credentials() {
             ? i
             : {
                 ...i,
-                userId: response.data.id,
-                userFullName: response.data.userFullName,
+                fullName: response.data.userfullName,
               }
         )
       );
+      setRefresh(!refresh);
     } catch (error: any) {
       errorToast(error.message);
     }

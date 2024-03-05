@@ -3,7 +3,6 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import { LOGO } from "@/constants/images";
 import axios from "axios";
-import InsertCredentials from "./insert";
 import CertificateTable from "./data";
 import { errorToast } from "@/lib/toastify";
 

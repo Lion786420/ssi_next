@@ -64,6 +64,7 @@ export default function CertificateTable({
       }
       headings={columns}
       rawData={data.map((item, index) => {
+        console.log(item);
         return {
           did: {
             value: item.did,
@@ -85,8 +86,8 @@ export default function CertificateTable({
           },
           user: {
             value: "",
-            display: item.userId ? (
-              item.userFullName
+            display: item.fullName ? (
+              item.fullName
             ) : (
               <UISelect
                 placeholder="Select any user"

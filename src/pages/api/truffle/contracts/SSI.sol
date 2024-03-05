@@ -13,6 +13,7 @@ contract SSI {
         string phone;
         string permanentAddress;
         bool status;
+        string fullName;
     }
 
     mapping(uint256 => Document) public documents;
@@ -33,7 +34,8 @@ contract SSI {
             email,
             phone,
             permanentAddress,
-            false
+            false,
+            ""
         );
         docCount++;
     }
@@ -42,6 +44,14 @@ contract SSI {
 
     function getDocCount() public view returns (uint256) {
         return docCount;
+    }
+
+    function updateName(string memory _user_did, string memory _fullName) public {
+        for (uint256 i = 0; i < docCount; i++) {
+            if (keccak256(bytes(documents[i].user_did)) == keccak256(bytes(_user_did))) {
+                documents[i].fullName = _fullName;
+            }
+        }
     }
 
     function getDocument(uint256 id)
@@ -54,7 +64,8 @@ contract SSI {
             string memory email,
             string memory phone,
             string memory permanentAddress,
-            bool status
+            bool status,
+            string memory fullName
         )
     {
         Document memory doc = documents[id];
@@ -65,7 +76,8 @@ contract SSI {
             doc.email,
             doc.phone,
             doc.permanentAddress,
-            doc.status
+            doc.status,
+            doc.fullName
         );
     }
 

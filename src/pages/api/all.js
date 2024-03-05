@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const contractABI = require("./truffle/build/contracts/SSI.json").abi;
 
 const web3 = new Web3("http://127.0.0.1:7545");
-const contractAddress = "0x9DE2CEa300cF94C506e583F75A95B327C461ce9a";
+const contractAddress = "0x1C54918d84D6ceeA3f3E0A45Cea914b5fDc8792E";
 const contract = new web3.eth.Contract(contractABI, contractAddress);
 
 async function getAllDocuments() {
@@ -30,10 +30,12 @@ export default function handler(req, res) {
           email: doc.email,
           phone: doc.phone,
           address: doc.permanentAddress,
+          fullName: doc.fullName,
         };
         allDocs.push(each);
       });
-      res.send(allDocs); //Object containing list of all documents issued
+      console.log(allDocs);
+      res.send(allDocs);
     })
     .catch((error) => {
       console.error("Error fetching documents:", error);
