@@ -3,6 +3,9 @@ import UIButton from "@/ui/uibutton";
 import UIInput from "@/ui/uiinput";
 import UIModal from "@/ui/uimodal";
 import { constructInputDate } from "@/utils/helpers";
+import { useSDK, MetaMaskProvider } from "@metamask/sdk-react";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+
 import {
   ChangeEvent,
   EventHandler,
@@ -35,7 +38,6 @@ export default function InsertCredentials({ onClose }: CredentialsInsertProps) {
     )
       return errorToast("Fields are required");
     try {
-      console.log(state);
       await axios.post("/api/add", state);
       successToast("Credentials Created");
     } catch (error: any) {
@@ -47,6 +49,7 @@ export default function InsertCredentials({ onClose }: CredentialsInsertProps) {
       <UIModal onClose={onClose}>
         <div className="employee-insert">
           <h2 className="employee-insert--heading">Insert Credentials</h2>
+          <ConnectButton />
           <UIInput
             id="name"
             isRequired
@@ -92,7 +95,6 @@ export default function InsertCredentials({ onClose }: CredentialsInsertProps) {
             onChange={handleInput}
             defaultValue={state.email}
           />
-
           <div className="employee-insert--actions">
             <UIButton
               label="Save"

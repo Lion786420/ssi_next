@@ -9,9 +9,10 @@ const contractAddress = "0x1C54918d84D6ceeA3f3E0A45Cea914b5fDc8792E";
 const contract = new web3.eth.Contract(contractABI, contractAddress);
 
 const TUser = [
-  { id: "234234", phone: "9805401044", name: "Aayush Adhikari" },
-  { id: "wq3e4534", phone: "9833723845", name: "Aarjan KC" },
-  { id: "54393845", phone: "9861444556", name: "Aniket Thapa" },
+  { id: "20", phone: "9861444556", name: "Aniket Thapa" },
+  { id: "21", phone: "9805401044", name: "Aayush Adhikari" },
+  { id: "22", phone: "9833723845", name: "Aarjan KC" },
+  { id: "23", phone: "9751234865", name: "Abhijeet Thakur" },
 ];
 
 export default function handler(req, res) {

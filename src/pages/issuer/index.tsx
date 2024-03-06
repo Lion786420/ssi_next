@@ -9,40 +9,12 @@ import { errorToast } from "@/lib/toastify";
 import { MetaMaskProvider } from "@metamask/sdk-react";
 
 const demoUser: TUser[] = [
-  { id: "234234", phone: "9805401044", name: "Aayush Adhikari" },
-  { id: "wq3e4534", phone: "9833723845", name: "Aarjan KC" },
-  { id: "54393845", phone: "9861444556", name: "Aniket Thapa" },
+  { id: "20", phone: "9861444556", name: "Aniket Thapa" },
+  { id: "21", phone: "9805401044", name: "Aayush Adhikari" },
+  { id: "22", phone: "9833723845", name: "Aarjan KC" },
+  { id: "23", phone: "9751234865", name: "Abhijeet Thakur" },
 ];
-const demoDocument: TCredentials[] = [
-  {
-    did: "234234w34r234r23re23e23e",
-    name: "Aayush Adhikari",
-    phone: "9805401044",
-    dob: "2000/01/01",
-    email: "aayush123@gmail.com",
-    address: "Kathmandu, Nepal",
-    userId: "234234",
-    fullName: "Aayush Adhikari",
-  },
-  {
-    did: "aserq3w4rq34rfwe4423se",
-    name: "Aarjan KC",
-    phone: "9833723845",
-    dob: "2002/10/03",
-    email: "aarjan123@gmail.com",
-    address: "Butwal, Nepal",
-  },
-  {
-    did: "as345uwer834r89734",
-    name: "Aniket Thapa",
-    phone: "9861444556",
-    dob: "1999/05/10",
-    email: "aniketthapa01@gmail.com",
-    address: "Dolakha, Nepal",
-    userId: "54393845",
-    fullName: "Aniket Thapa",
-  },
-];
+const demoDocument: TCredentials[] = [];
 
 export type TCredentials = {
   did: string;

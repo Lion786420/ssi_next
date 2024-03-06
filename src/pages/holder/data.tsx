@@ -33,6 +33,7 @@ const columns: UITableHeader<CredentialsTable>[] = [
 interface CertificateTableProps {
   data: TCredentials[];
 }
+
 export default function CertificateTable({ data }: CertificateTableProps) {
   return (
     <UITable<CredentialsTable>

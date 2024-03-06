@@ -2,9 +2,13 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/verifier": "pages/verifier.js",
+  "/holder": "pages/holder.js",
   "/issuer": "pages/issuer.js",
   "/api/all": "pages/api/all.js",
-  "/holder": "pages/holder.js"
+  "/": "pages/index.js",
+  "/api/login": "pages/api/login.js",
+  "/api/assign": "pages/api/assign.js",
+  "/verifier": "pages/verifier.js",
+  "/api/cred": "pages/api/cred.js",
+  "/api/verify": "pages/api/verify.js"
 }

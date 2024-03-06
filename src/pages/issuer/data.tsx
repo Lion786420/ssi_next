@@ -64,7 +64,6 @@ export default function CertificateTable({
       }
       headings={columns}
       rawData={data.map((item, index) => {
-        console.log(item);
         return {
           did: {
             value: item.did,

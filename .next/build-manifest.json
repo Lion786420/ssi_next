@@ -27,6 +27,11 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
+    "/holder": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/holder.js"
+    ],
     "/issuer": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

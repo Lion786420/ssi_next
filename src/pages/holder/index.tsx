@@ -10,18 +10,7 @@ const demoUser: TUser[] = [
   { id: "234234", phone: "9805401044", name: "Aayush Adhikari" },
   { id: "wq3e4534", phone: "9812345678", name: "Aarjan Xetri" },
 ];
-const demoDocument: TCredentials[] = [
-  {
-    did: "234234w34r234r23re23e23e",
-    name: "Aayush Adhikari",
-    phone: "9805401044",
-    dob: "2000/01/01",
-    email: "aayush123@gmail.com",
-    address: "Thimi, Nepal",
-    userId: "234234",
-    userFullName: "Aayush Adhikari",
-  },
-];
+const demoDocument: TCredentials[] = [];
 
 export type TCredentials = {
   did: string;
@@ -40,7 +29,19 @@ export type TUser = {
 };
 export default function Credentials() {
   const [documents, setDocuments] = useState<TCredentials[]>(demoDocument);
-
+  let loginId = localStorage.getItem("loginId");
+  console.log(loginId);
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await axios.post("/api/cred", { loginId });
+        setDocuments(response.data);
+      } catch (error) {
+        errorToast("Error");
+      }
+    };
+    fetchUsers();
+  }, []);
   return (
     <>
       <Head>
